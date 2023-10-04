@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "name": "lusy",
+      "position": "President",
+      "pic": "pic1.jpg"
+    },
+    {
+      "name": "David",
+      "position": "Vice President",
+      "pic": "pic1.jpg"
+    },
+    {
+      "name": "nana",
+      "position": "UI Designer",
+      "pic": "pic1.jpg"
+    },
+    {
+      "name": "jenny",
+      "position": "Font_end Developer",
+      "pic": "pic1.jpg"
+    },
+    {
+      "name": "Emily",
+      "position": "back_end Developer",
+      "pic": "pic1.jpg"
+    },
+    {
+      "name": "shu",
+      "position": "President",
+      "pic": "pic1.jpg"
+    }
+  ]
+}
