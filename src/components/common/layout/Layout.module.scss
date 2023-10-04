@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Orbitron&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 .layout {
 	width: 100%;
-
 	figure {
 		width: 100%;
 		height: 30vh;
@@ -9,12 +8,11 @@
 		opacity: 0;
 		transition: 1s 0s;
 	}
-
 	.content {
 		width: 80vw;
 		margin: 5vh auto;
 		min-height: 60vh;
-		transform: translateY(100px);
+		transform: translateX(100px);
 		opacity: 0;
 		transition: transform 1s 0.5s, opacity 1s 0.5s;
 
@@ -22,7 +20,6 @@
 			font: normal 100px/1 'Nanum Myeongjo';
 			color: #555;
 			margin-bottom: 30px;
-
 			span {
 				display: inline-block;
 				opacity: 0;
@@ -31,18 +28,18 @@
 			}
 		}
 	}
-
 	&.on {
 		figure {
 			opacity: 1;
 		}
 		.content {
 			opacity: 1;
-			transform: translateY(0px);
-
+			transform: translateX(0px);
 			h1 {
-				opacity: 1;
-				transform: scale(1);
+				span {
+					opacity: 1;
+					transform: scale(1);
+				}
 			}
 		}
 	}
