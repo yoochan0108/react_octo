@@ -1,8 +1,10 @@
 import styles from './Layout.module.scss';
 import clsx from 'clsx';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Layout({ title, children, styleName }) {
+	//컴포넌트 마운트시 변경할 state추가
+	const [IsOn, setIsOn] = useState(false);
 	//가상돔 요소를 document.qurrySelector를 쓰지말고 실시간으로 참조하고 싶을 떼
 	//빈 참조갹체를 useRef로 생성
 	const frame = useRef(null);
@@ -11,11 +13,18 @@ export default function Layout({ title, children, styleName }) {
 	useEffect(() => {
 		console.log('page변경');
 		//컴포넌트 마운트시 한번만 호출
-		//페이지가 변경이 되서 각 페이지마다의 layout컴포넌트가 마운트될시 한번만 on클래스를 추가
-		isOn.current = true;
+		//컴포넌트 마운트시 IsOn값을 true로 변경
+		//IsOn을 useRef가 아닌 state로 변경해야 되는 이유
+		//useRef값을 변경해도 리액트는 변경점을 인지 못해서 재렌더링이 안되기 때문에
+		setIsOn(true);
 	}, []);
 	return (
-		<section ref={frame} className={clsx(styles.layout, styleName, isOn.current ? styles.on : '')}>
+		//참조하고싶은 가상돔 요소에 ref로 연결
+		<section
+			ref={frame}
+			//IsOn State가 true 일떄에만 on 클래스명 적용
+			className={clsx(styles.layout, styleName, IsOn ? styles.on : '')}
+		>
 			<figure></figure>
 
 			<div className={clsx(styles.content)}>
